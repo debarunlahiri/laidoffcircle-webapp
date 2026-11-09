@@ -1,0 +1,76 @@
+/* Large phones, unfolded foldables (Galaxy Z Fold, Pixel Fold, Surface Duo)
+   and small tablets. The phone layout is the base; this only adds room. */
+
+/* Unfolded inner screens are ~600–900px wide: centre the column and lift type. */
+@media (min-width: 600px) {
+  :root {
+    --column: 680px;
+  }
+  .page-layout {
+    padding-inline: 20px;
+  }
+  .bottom-nav {
+    left: 50%;
+    right: auto;
+    width: min(100%, 720px);
+    transform: translateX(-50%);
+    border-radius: 18px 18px 0 0;
+  }
+}
+
+/* Wide enough for two panes: messages list + conversation side by side. */
+@media (min-width: 720px) {
+  :root {
+    --column: 760px;
+  }
+  .messaging {
+    display: grid;
+    grid-template-columns: minmax(280px, 340px) 1fr;
+  }
+  .messaging.chat-open {
+    position: static;
+    inset: auto;
+    height: calc(100dvh - var(--appbar-h) - var(--tabbar-h) - var(--safe-top) - var(--safe-bottom));
+  }
+  body:has(.messaging.chat-open) .bottom-nav {
+    display: grid;
+  }
+}
+
+/* Dual-screen / book-posture devices: never draw content across the hinge.
+   Supported by Edge/Chromium on Surface Duo and Android foldables. */
+@media (horizontal-viewport-segments: 2) {
+  .app-shell {
+    display: grid;
+    grid-template-columns: env(viewport-segment-width 0 0, 50vw) env(viewport-segment-width 1 0, 50vw);
+    column-gap: calc(env(viewport-segment-left 1 0, 50vw) - env(viewport-segment-right 0 0, 50vw));
+  }
+  .workspace {
+    grid-column: 1;
+    padding-inline: 0;
+  }
+  main {
+    max-width: none;
+  }
+  .bottom-nav {
+    left: 0;
+    width: env(viewport-segment-width 0 0, 50vw);
+    transform: none;
+    border-radius: 0;
+  }
+}
+/* Standard syntax (Chrome 138+) for the same thing. */
+@media (spanning: single-fold-vertical) {
+  .bottom-nav {
+    left: 0;
+    width: env(fold-left, 50vw);
+    transform: none;
+  }
+}
+
+/* Half-folded laptop/“tent” posture on a foldable: keep content in the top half. */
+@media (device-posture: folded) and (orientation: landscape) {
+  .page-layout {
+    padding-bottom: 24px;
+  }
+}

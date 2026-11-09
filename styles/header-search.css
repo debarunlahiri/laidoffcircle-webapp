@@ -1,0 +1,64 @@
+.topbar-searching .header-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+
+.header-search-field {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  height: 44px;
+  padding-left: 12px;
+  gap: 8px;
+  border: 1px solid var(--surface-3);
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  color: var(--text-3);
+}
+
+.header-search-field > svg {
+  flex-shrink: 0;
+}
+
+.header-search-field input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0 8px 0 0;
+  border: 0;
+  border-radius: inherit;
+  outline: none;
+  background: transparent;
+  color: var(--text-1);
+  font: inherit;
+  font-size: 16px;
+}
+
+.header-search-field input::placeholder {
+  color: var(--text-3);
+}
+
+:root .header-search-field input:is(:focus, :focus-visible) {
+  outline: none;
+  box-shadow: none;
+  border: 0;
+  background: transparent;
+}
+
+.header-search-field input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.header-search-field .icon-button,
+.header-search > .text-button {
+  flex-shrink: 0;
+}
+
+.header-search > .text-button {
+  padding-inline: 8px;
+  color: var(--brand);
+}

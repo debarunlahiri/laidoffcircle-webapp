@@ -1,0 +1,253 @@
+:root {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    translate: 0 10px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes surface-enter {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes backdrop-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes dialog-enter {
+  from {
+    opacity: 0;
+    translate: 0 12px;
+    scale: 0.98;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+.page-transition {
+  animation: page-enter 280ms var(--motion-ease);
+}
+.page-transition > .card,
+.people-grid > .card,
+.right-rail > .card {
+  animation: surface-enter 320ms var(--motion-ease) backwards;
+}
+.page-transition > .card:nth-child(2),
+.people-grid > .card:nth-child(2),
+.right-rail > .card:nth-child(2) {
+  animation-delay: 35ms;
+}
+.page-transition > .card:nth-child(3),
+.people-grid > .card:nth-child(3),
+.right-rail > .card:nth-child(3) {
+  animation-delay: 65ms;
+}
+.page-transition > .card:nth-child(n + 4),
+.people-grid > .card:nth-child(n + 4),
+.right-rail > .card:nth-child(n + 4) {
+  animation-delay: 90ms;
+}
+.control-popover-panel,
+.company-options,
+.account-dropdown,
+.notification-panel,
+.inline-composer-form,
+.message {
+  animation: surface-enter 180ms var(--motion-ease);
+}
+.modal-backdrop {
+  animation: backdrop-enter 160ms ease-out;
+}
+.modal {
+  animation: dialog-enter 240ms var(--motion-ease);
+}
+.toast {
+  animation: surface-enter 200ms var(--motion-ease);
+}
+.nav-item,
+.discovery-tabs > button,
+.feed-tabs > button,
+.conversation-preview {
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+.account-menu-trigger svg {
+  transition: rotate 180ms var(--motion-ease);
+}
+.account-menu-trigger[aria-expanded="true"] svg {
+  rotate: 180deg;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Smooth colour change while the theme flips. */
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition:
+    background-color 280ms ease,
+    color 280ms ease,
+    border-color 280ms ease,
+    fill 280ms ease !important;
+}
+
+/* Press and hover feedback. */
+button,
+.primary,
+.secondary,
+.icon-button {
+  transition:
+    transform 140ms var(--motion-ease),
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease;
+}
+button:not(:disabled):active,
+.primary:active,
+.icon-button:active {
+  transform: scale(0.96);
+}
+.primary:not(:disabled):hover {
+  box-shadow: 0 6px 16px #4c72ef33;
+  transform: translateY(-1px);
+}
+.card {
+  transition:
+    box-shadow 200ms ease,
+    border-color 200ms ease;
+}
+.opportunity.card:hover,
+.person-card:hover {
+  box-shadow: 0 8px 24px #1a233a14;
+}
+
+/* Reaction pop. */
+@keyframes action-pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.35) rotate(-8deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.post-actions > .active-action svg {
+  animation: action-pop 380ms var(--motion-ease);
+}
+.comment-actions button.active svg,
+.comment-item button.active svg {
+  animation: action-pop 380ms var(--motion-ease);
+}
+
+/* Lists enter in sequence. */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.comment-item,
+.notification-panel > *,
+.conversation-preview,
+.person-card {
+  animation: rise-in 280ms var(--motion-ease) both;
+}
+.comment-item:nth-child(2),
+.notification-panel > *:nth-child(2),
+.conversation-preview:nth-child(2),
+.person-card:nth-child(2) {
+  animation-delay: 40ms;
+}
+.comment-item:nth-child(3),
+.notification-panel > *:nth-child(3),
+.conversation-preview:nth-child(3),
+.person-card:nth-child(3) {
+  animation-delay: 80ms;
+}
+.comment-item:nth-child(n + 4),
+.notification-panel > *:nth-child(n + 4),
+.conversation-preview:nth-child(n + 4),
+.person-card:nth-child(n + 4) {
+  animation-delay: 120ms;
+}
+
+/* Lightbox and images. */
+.lightbox {
+  animation: backdrop-enter 200ms ease;
+}
+.lightbox > img {
+  animation: dialog-enter 260ms var(--motion-ease);
+}
+.post-image-tile img {
+  transition: transform 300ms var(--motion-ease);
+}
+.post-image-tile:hover img {
+  transform: scale(1.03);
+}
+.post-image-tile {
+  overflow: hidden;
+}
+
+/* Notification badge and theme icon. */
+@keyframes badge-pop {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.notification-button i,
+.nav-item i {
+  animation: badge-pop 300ms var(--motion-ease);
+}
+.theme-toggle svg {
+  animation: dialog-enter 300ms var(--motion-ease);
+}
+.sidebar {
+  transition: width 220ms var(--motion-ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button:active,
+  .primary:hover {
+    transform: none !important;
+  }
+}

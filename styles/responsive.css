@@ -1,0 +1,606 @@
+@media not all {
+  .page-layout {
+    padding-top: 40px;
+    gap: 34px;
+    grid-template-columns: minmax(0, 730px) 304px;
+  }
+  .page-heading h1 {
+    font-size: 33px;
+  }
+  .welcome-banner {
+    min-height: 245px;
+  }
+  .post-copy {
+    font-size: 14px;
+  }
+  .sidebar {
+    width: 260px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  .workspace {
+    margin-left: 260px;
+  }
+  .topbar {
+    padding: 0 50px;
+  }
+}
+@media all {
+  .sidebar {
+    width: 215px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .workspace {
+    margin-left: 215px;
+  }
+  .brand {
+    font-size: 20px;
+  }
+  .workspace-label {
+    font-size: 11px;
+  }
+  .page-layout {
+    padding: 28px 23px;
+    gap: 22px;
+    grid-template-columns: minmax(0, 1fr) 270px;
+  }
+  .topbar {
+    padding: 0 25px;
+    display: flex;
+  }
+  .topbar > .topbar-search {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+  .feed-tabs {
+    gap: 14px;
+  }
+  .welcome-banner {
+    padding-left: 23px;
+  }
+  .welcome-banner h2 {
+    font-size: 25px;
+  }
+  .post {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+  .post-copy {
+    font-size: 12px;
+  }
+  .heading-art {
+    display: none;
+  }
+  h1 {
+    font-size: 26px;
+  }
+  .public-label {
+    display: none;
+  }
+  .post-stats {
+    font-size: 11px;
+  }
+  .mini-opportunity strong {
+    font-size: 11px;
+  }
+}
+@media all {
+  .right-rail {
+    display: none;
+  }
+  .page-layout {
+    display: block;
+    max-width: 760px;
+    padding: 30px;
+  }
+  .post-copy {
+    font-size: 14px;
+  }
+  .post-stats {
+    font-size: 11px;
+  }
+  .feed-tabs {
+    gap: 25px;
+  }
+  .sidebar-community {
+    margin-top: 30px;
+  }
+  .page-heading h1 {
+    font-size: 30px;
+  }
+  .heading-art {
+    display: block;
+  }
+  .welcome-banner h2 {
+    font-size: 29px;
+  }
+  .welcome-banner {
+    padding: 27px;
+  }
+  .welcome-banner p {
+    font-size: 13px;
+  }
+  .author > span {
+    font-size: 12px;
+  }
+  .post-actions > button {
+    font-size: 12px;
+  }
+}
+@media all {
+  .sidebar {
+    display: none;
+  }
+  .sidebar.mobile-open {
+    display: flex;
+    box-shadow: 15px 0 70px #25391c40;
+    width: 245px;
+    top: 65px;
+  }
+  .workspace {
+    margin-left: 0;
+  }
+  .topbar {
+    height: 65px;
+    padding: 0 18px;
+    gap: 12px;
+    display: flex;
+  }
+  .topbar > .topbar-search {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+  .mobile-menu {
+    display: inline-flex;
+  }
+  .breadcrumb {
+    flex: 1;
+    gap: 7px;
+    font-size: 12px;
+  }
+  .breadcrumb > strong {
+    max-width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .header-actions {
+    gap: 13px;
+  }
+  .demo-label {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+  .header-divider {
+    display: none;
+  }
+  .profile-button > svg {
+    display: none;
+  }
+  .page-layout {
+    padding: 25px 17px;
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+  .page-heading h1 {
+    font-size: 27px;
+  }
+  .page-heading p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .page-heading {
+    margin-bottom: 21px;
+  }
+  .heading-art {
+    display: none;
+  }
+  .welcome-banner {
+    min-height: 225px;
+    padding: 23px 20px;
+  }
+  .welcome-banner h2 {
+    font-size: 26px;
+  }
+  .welcome-banner p {
+    font-size: 12px;
+  }
+  .welcome-banner > div:first-child {
+    position: relative;
+    z-index: 2;
+  }
+  .banner-kicker {
+    font-size: 11px;
+  }
+  .welcome-banner button {
+    font-size: 11px;
+    gap: 8px;
+  }
+  .composer {
+    padding: 15px 13px 0;
+  }
+  .composer > div:first-child > button {
+    font-size: 12px;
+    padding: 12px 10px;
+  }
+  .composer-tools button {
+    font-size: 11px;
+    gap: 5px;
+  }
+  .composer-tools {
+    gap: 5px;
+  }
+  .composer-tools button svg {
+    width: 14px;
+  }
+  .feed-tabs {
+    gap: 17px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .feed-tabs > button {
+    font-size: 11px;
+  }
+  .feed-toolbar {
+    gap: 10px;
+  }
+  .feed-toolbar > .icon-button {
+    display: none;
+  }
+  .feed-label {
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+  .feed-label > span:last-child {
+    font-size: 11px;
+  }
+  .post {
+    padding: 17px 14px 0;
+  }
+  .author strong {
+    font-size: 13px;
+  }
+  .author > span {
+    font-size: 11px;
+  }
+  .avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 12px;
+  }
+  .follow-button {
+    font-size: 11px;
+  }
+  .post-heading {
+    gap: 8px;
+  }
+  .post-heading > .icon-button {
+    margin-left: 0;
+  }
+  .post-copy {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .post-stats {
+    font-size: 11px;
+  }
+  .post-actions > button {
+    font-size: 11px;
+    gap: 6px;
+  }
+  .post-actions > button svg {
+    width: 16px;
+  }
+  .post-actions > button:last-child {
+    margin-left: 0;
+  }
+  .post-tags {
+    gap: 6px;
+  }
+  .tag {
+    font-size: 11px;
+  }
+  .post-tags .company-tag {
+    font-size: 11px;
+  }
+  .open-tag {
+    font-size: 11px;
+  }
+  .network-stats {
+    gap: 8px;
+  }
+  .network-stats > div {
+    padding: 15px 10px;
+  }
+  .network-stats strong {
+    font-size: 26px;
+  }
+  .network-stats span {
+    font-size: 11px;
+  }
+  .section-bar h2 {
+    font-size: 14px;
+  }
+  .section-bar > .text-button {
+    font-size: 11px;
+  }
+  .people-grid {
+    gap: 10px;
+  }
+  .person-card h3 {
+    font-size: 13px;
+  }
+  .person-card p {
+    font-size: 11px;
+  }
+  .opportunity {
+    padding: 18px;
+  }
+  .opportunity-top {
+    gap: 8px;
+  }
+  .opportunity-top small {
+    font-size: 11px;
+  }
+  .opportunity-top > .tag {
+    font-size: 11px;
+    padding: 5px;
+  }
+  .opportunity h2 {
+    font-size: 18px;
+  }
+  .opportunity-bottom {
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .opportunity-bottom > span {
+    font-size: 11px;
+    max-width: 120px;
+    line-height: 1.7;
+  }
+  .opportunity-bottom > .primary {
+    font-size: 11px;
+    padding: 10px;
+  }
+  .topic-card {
+    gap: 8px;
+    padding: 13px;
+  }
+  .topic-card strong {
+    font-size: 11px;
+  }
+  .topic-card > span {
+    padding: 6px;
+  }
+  .topic-card > svg {
+    display: none;
+  }
+  .modal {
+    padding: 20px;
+  }
+  .modal-heading h2 {
+    font-size: 24px;
+  }
+  .modal-bottom {
+    flex-wrap: wrap;
+  }
+  .modal-bottom > span {
+    width: 100%;
+  }
+  .modal-bottom .primary {
+    margin-left: auto;
+  }
+  .modal textarea {
+    min-height: 140px;
+  }
+  .notification-panel {
+    right: 15px;
+    top: 60px;
+  }
+  .form-row {
+    gap: 10px;
+  }
+  .chart-card {
+    padding: 15px;
+  }
+  .bar-chart {
+    gap: 9px;
+    height: 160px;
+  }
+  .chart-card .section-bar {
+    flex-wrap: wrap;
+  }
+  .company-table {
+    padding: 15px;
+  }
+  .profile-modal {
+    padding: 35px 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+@media not all {
+  .post-copy {
+    font-size: 15px;
+  }
+  .page-heading h1 {
+    font-size: 36px;
+  }
+}
+@media all {
+  .page-layout {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    padding: 28px 24px;
+  }
+  .welcome-community {
+    display: none;
+  }
+  .welcome-banner {
+    padding: 28px;
+  }
+  .welcome-banner h2 {
+    font-size: 30px;
+  }
+  .post-copy {
+    font-size: 14px;
+  }
+}
+@media all {
+  .page-layout {
+    display: block;
+    max-width: 800px;
+  }
+  .welcome-community {
+    display: block;
+  }
+  .feed-tabs {
+    gap: 4px;
+  }
+  .heading-art {
+    display: none;
+  }
+}
+@media all {
+  .sidebar.mobile-open {
+    top: 65px;
+    width: min(290px, 88vw);
+  }
+  .topbar {
+    padding: 0 16px;
+  }
+  .demo-label {
+    display: none;
+  }
+  .breadcrumb {
+    font-size: 12px;
+  }
+  .page-layout {
+    padding: 26px 16px;
+  }
+  .page-heading h1 {
+    font-size: 29px;
+  }
+  .page-heading p {
+    font-size: 13px;
+  }
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .welcome-banner {
+    padding: 24px;
+    min-height: auto;
+  }
+  .welcome-community {
+    display: none;
+  }
+  .welcome-banner h2 {
+    font-size: 29px;
+  }
+  .welcome-banner p {
+    font-size: 13px;
+  }
+  .banner-kicker {
+    font-size: 10px;
+  }
+  .welcome-banner button {
+    font-size: 12px;
+  }
+  .composer {
+    padding: 16px 14px 0;
+  }
+  .composer > div:first-child > button {
+    font-size: 13px;
+  }
+  .composer-tools {
+    flex-wrap: wrap;
+    gap: 8px 14px;
+  }
+  .composer-tools button {
+    font-size: 11px;
+  }
+  .feed-tabs {
+    gap: 3px;
+  }
+  .feed-tabs > button {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .feed-label {
+    font-size: 9px;
+    letter-spacing: 0;
+    gap: 12px;
+  }
+  .feed-label > span:last-child {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  .post {
+    padding: 20px 16px 0;
+  }
+  .post-heading {
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+  .author strong {
+    font-size: 14px;
+  }
+  .author > span,
+  .author .post-time {
+    font-size: 11px;
+  }
+  .follow-button {
+    font-size: 11px;
+  }
+  .post-copy {
+    font-size: 14px;
+  }
+  .tag,
+  .post-tags .company-tag,
+  .open-tag {
+    font-size: 10px;
+  }
+  .post-stats,
+  .post-actions > button {
+    font-size: 11px;
+  }
+  .network-stats {
+    grid-template-columns: 1fr;
+  }
+  .network-stats > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+  }
+  .network-stats span {
+    font-size: 13px;
+  }
+  .people-grid,
+  .topic-grid {
+    grid-template-columns: 1fr;
+  }
+  .person-card h3 {
+    font-size: 15px;
+  }
+  .person-card p,
+  .opportunity-bottom > .primary,
+  .topic-card strong {
+    font-size: 13px;
+  }
+  .opportunity-bottom {
+    flex-wrap: wrap;
+  }
+  .opportunity-bottom > span {
+    max-width: none;
+    font-size: 12px;
+  }
+}

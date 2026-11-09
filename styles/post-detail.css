@@ -1,0 +1,256 @@
+.post-copy {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.post-copy > :first-child {
+  margin-top: 0;
+}
+.post-copy > :last-child {
+  margin-bottom: 0;
+}
+.post-copy :is(h1, h2, h3, h4, h5, h6) {
+  margin: 0.85em 0 0.35em;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 1.1em;
+  line-height: 1.35;
+}
+.post-copy :is(h1, h2) {
+  font-size: 1.3em;
+}
+.post-copy :is(p, ul, ol, blockquote, pre) {
+  margin: 0.5em 0;
+}
+.post-copy li {
+  margin: 0.15em 0;
+}
+.post-copy li > :is(p, ul, ol) {
+  margin: 0;
+}
+.post-copy :is(ul, ol) {
+  padding-inline-start: 1.5em;
+}
+.post-copy blockquote {
+  padding-inline-start: 0.85em;
+  border-inline-start: 3px solid var(--line);
+}
+.post-copy a {
+  text-decoration: underline;
+}
+.post-copy :is(.post-hashtag, .post-mention) {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: none;
+}
+.post-copy :is(.post-hashtag, .post-mention):is(:hover, :focus-visible) {
+  text-decoration: underline;
+}
+.post-copy :is(pre, :not(pre) > code) {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--mint);
+}
+.post-copy pre {
+  max-width: 100%;
+  padding: 0.75em 1em;
+  overflow-x: auto;
+  white-space: pre;
+}
+.post-copy :not(pre) > code {
+  padding: 0.1em 0.3em;
+}
+.post-copy.is-clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.post-preview .post-copy,
+.post-preview .post-tags {
+  cursor: pointer;
+}
+.post-preview:has(.post-preview-link:focus-visible) {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+.read-more {
+  display: inline-block;
+  margin: 4px 0 8px;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--green);
+}
+.read-more:hover {
+  text-decoration: underline;
+}
+.stat-link {
+  all: unset;
+  cursor: pointer;
+}
+.stat-link:hover,
+.stat-link:focus-visible {
+  text-decoration: underline;
+  color: var(--ink);
+}
+.post-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  max-width: 760px;
+}
+.post-detail > * {
+  min-width: 0;
+  max-width: 100%;
+}
+.post-detail .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--muted);
+}
+.post-detail .post-copy {
+  max-height: none;
+}
+.post-detail-comments {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  padding: 20px;
+  border-top: 0;
+}
+.comments-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+}
+.comments-toolbar h2 {
+  margin: 0;
+  font-size: 17px;
+  color: var(--ink);
+}
+.post-detail-comments > p {
+  margin: 0;
+}
+.engagement-tabs {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 8px;
+}
+.engagement-tabs button {
+  padding: 10px 12px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.engagement-tabs button.active {
+  color: var(--green);
+  border-bottom-color: var(--green);
+}
+.engagement-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+.engagement-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+.engagement-list .user-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.engagement-list span {
+  display: grid;
+}
+.engagement-list time {
+  text-align: right;
+  line-height: 1.5;
+}
+.engagement-list small,
+.engagement-list time {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.referral-share {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+}
+html[data-theme="dark"] .post-stats,
+html[data-theme="dark"] .stat-link {
+  color: var(--muted);
+}
+html[data-theme="dark"] .stat-link:hover,
+html[data-theme="dark"] .stat-link:focus-visible {
+  color: var(--ink);
+}
+html[data-theme="dark"] .read-more,
+html[data-theme="dark"] .post-copy :is(.post-hashtag, .post-mention) {
+  color: #7f9bff;
+}
+html[data-theme="dark"] .engagement-list li {
+  border-color: var(--line);
+}
+
+.comment-form {
+  flex-wrap: wrap;
+}
+.comment-form > input:not([hidden]) {
+  flex: 1 1 160px;
+}
+.comment-attachment {
+  position: relative;
+  flex-basis: 100%;
+  order: -1;
+  width: fit-content;
+}
+.comment-attachment img {
+  display: block;
+  max-width: 220px;
+  max-height: 160px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+.comment-attachment button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  cursor: pointer;
+}
+.comment-media {
+  margin-top: 8px;
+  max-width: 280px;
+}
+.comment-media .post-images {
+  margin: 0;
+}

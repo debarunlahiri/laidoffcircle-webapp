@@ -1,0 +1,197 @@
+.insights-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  min-width: 0;
+}
+.insights-toolbar {
+  display: grid;
+  gap: 12px;
+}
+.insights-toolbar h2 {
+  margin: 0;
+  color: var(--text-1);
+  font-size: 17px;
+  line-height: 1.35;
+}
+.insights-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 108px;
+  gap: 10px;
+  align-items: center;
+}
+:root .insights-controls > .primary {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+:root .insights-controls > select {
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  margin: 0;
+  padding: 8px 36px 8px 12px;
+  border: 1px solid var(--surface-3);
+  border-radius: 10px;
+  background-color: var(--surface-1);
+  color: var(--text-1);
+  font-size: 16px;
+}
+:root .insights-page .insight-disclaimer {
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--surface-2);
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.insight-disclaimer > svg {
+  flex: 0 0 18px;
+  margin-top: 2px;
+}
+.insights-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+:root .insights-stats > .card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+  padding: 12px 10px;
+  border: 1px solid var(--surface-3);
+  border-radius: 12px;
+  background: var(--surface-1);
+}
+.insights-stats strong {
+  color: var(--brand);
+  font-size: 24px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.insights-stats span {
+  color: var(--text-3);
+  font-size: 11px;
+  line-height: 1.4;
+}
+:root .insights-page .chart-card,
+:root .insights-page .company-table {
+  min-width: 0;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--surface-3);
+  border-radius: 14px;
+  background: var(--surface-1);
+}
+:root .insights-page .chart-card .section-bar {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+:root .insights-page .chart-card .section-bar h2,
+:root .insights-page .company-table h2 {
+  margin: 0;
+  color: var(--text-1);
+  font-size: 15px;
+  line-height: 1.4;
+}
+:root .insights-page .chart-card .section-bar p {
+  margin: 4px 0 0;
+  color: var(--text-3);
+  font-size: 12px;
+}
+:root .insights-page .chart-card .tag {
+  width: fit-content;
+  font-size: 11px;
+  padding: 4px 8px;
+}
+.workforce-chart-scroll {
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+:root .insights-page .bar-chart {
+  height: 180px;
+  min-width: 360px;
+  gap: 8px;
+}
+:root .insights-page .bar-chart small {
+  color: var(--text-3);
+  font-size: 10px;
+}
+:root .insights-page .company-table .table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+:root .insights-page .company-table table {
+  min-width: 500px;
+}
+:root .insights-page .company-table .subtle-text {
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.5;
+}
+:root .workforce-report-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  min-width: 0;
+}
+.workforce-report-form > * {
+  min-width: 0;
+}
+:root .workforce-report-form .field-label {
+  display: grid;
+  gap: 6px;
+  color: var(--text-3);
+  font-size: 13px;
+}
+:root .workforce-report-form input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  font-size: 16px;
+}
+:root .workforce-report-form .modal-bottom {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding-top: 12px;
+}
+:root .workforce-report-form .modal-bottom .primary {
+  min-height: 44px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.insights-chart-empty {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 24px 8px;
+  color: var(--text-3);
+  text-align: center;
+}
+.insights-chart-empty > svg {
+  color: var(--brand);
+}
+.insights-chart-empty p {
+  margin: 0;
+  font-size: 13px;
+}
+.insights-chart-empty small {
+  font-size: 12px;
+  line-height: 1.5;
+}

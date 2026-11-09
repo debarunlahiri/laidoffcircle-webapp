@@ -1,0 +1,142 @@
+/* Composer and request form */
+.two-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.two-fields .filter-select {
+  width: 100%;
+  margin-top: 8px;
+}
+.field-builder {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+.field-builder legend {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 6px;
+}
+.preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.draft-fields {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.draft-fields li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: #f6f8fc;
+}
+.draft-fields li > span {
+  flex: 1;
+  min-width: 0;
+}
+.draft-fields small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.draft-fields .filter-check {
+  grid-column: auto;
+  font-size: 12px;
+}
+.custom-field {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.custom-field input {
+  flex: 1 1 180px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13px;
+  background: #fff;
+}
+.required-mark {
+  color: #c4473f;
+}
+.optional-mark {
+  color: var(--muted);
+  font-size: 11px;
+}
+.file-drop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 18px;
+  border: 1.5px dashed #b9c1d3;
+  border-radius: 10px;
+  color: #5a6477;
+  font-size: 13px;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+.file-drop:hover,
+.file-drop:focus-within {
+  border-color: #4c72ef;
+  background: #f1f5ff;
+}
+.file-drop input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+}
+.file-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #f6f8fc;
+  font-size: 13px;
+  color: #1d2638;
+}
+.file-chip > span {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.file-chip small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
+.file-chip.link {
+  text-decoration: none;
+}
+.file-chip.link:hover {
+  border-color: #4c72ef;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  animation: spin 800ms linear infinite;
+}

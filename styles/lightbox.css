@@ -1,0 +1,104 @@
+/* The viewer is portalled outside cards and never inherits dialog sizing. */
+:root .lightbox[role="dialog"] {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: calc(64px + env(safe-area-inset-top, 0px)) 0
+    calc(64px + env(safe-area-inset-bottom, 0px));
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: #080a0e;
+  box-shadow: none;
+  overscroll-behavior: contain;
+  isolation: isolate;
+  animation: backdrop-enter 160ms ease;
+}
+
+:root .lightbox > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 0;
+  object-fit: contain;
+  animation: none;
+}
+
+:root .lightbox .lightbox-close,
+:root .lightbox .lightbox-nav {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 12%);
+  color: #fff;
+}
+
+:root .lightbox .lightbox-close {
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  right: calc(12px + env(safe-area-inset-right, 0px));
+}
+
+:root .lightbox .lightbox-nav {
+  top: auto;
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+}
+
+:root .lightbox .lightbox-nav.prev {
+  left: 16px;
+}
+:root .lightbox .lightbox-nav.next {
+  right: 16px;
+}
+
+:root .lightbox .lightbox-count {
+  position: absolute;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+:root .lightbox > img {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  transform-origin: center;
+}
+
+:root .lightbox > img[data-dragging="false"] {
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+:root .lightbox > img[data-dragging="true"] {
+  transition: none;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root .lightbox[role="dialog"],
+  :root .lightbox > img {
+    animation: none;
+    transition: none !important;
+  }
+}

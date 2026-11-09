@@ -1,0 +1,293 @@
+.welcome-banner {
+  border: 1px solid #dbe0e9;
+  background: #ebeef3;
+  border-radius: 9px;
+  position: relative;
+  min-height: 234px;
+  padding: 25px 27px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.banner-kicker {
+  color: #4f5869;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+.welcome-banner h2 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.19;
+  letter-spacing: -0.5px;
+  margin: 13px 0 10px;
+  color: #2e3b53;
+}
+.welcome-banner p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #535c6e;
+}
+.welcome-banner button {
+  font-size: 12px;
+  color: var(--green);
+  font-weight: 600;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0;
+}
+.card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+.composer {
+  padding: 18px 20px 0;
+  margin-bottom: 23px;
+}
+.composer > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.composer > div:first-child > button {
+  font-size: 14px;
+  color: #657186;
+  text-align: left;
+  flex: 1;
+  background: #f9f9fb;
+  border: 1px solid #edeff4;
+  border-radius: 6px;
+  padding: 13px 14px;
+}
+.public-label {
+  font-size: 11px;
+  color: #626d82;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.composer-tools {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #eff1f5;
+  margin-top: 16px;
+  padding: 13px 0;
+}
+.composer-tools button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #4f5869;
+  font-size: 12px;
+}
+.composer-tools button svg {
+  color: #5b6679;
+}
+.feed-toolbar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #dbdfe9;
+  gap: 5px;
+}
+.feed-tabs {
+  display: flex;
+  gap: 21px;
+}
+.feed-tabs > button {
+  padding: 0 0 14px;
+  font-size: 12px;
+  white-space: nowrap;
+  color: #596376;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+.feed-tabs > .active-tab {
+  color: var(--green);
+  font-weight: 700;
+}
+.active-tab:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--green);
+}
+.feed-toolbar > .icon-button {
+  align-self: flex-start;
+  padding-top: 0;
+}
+.feed-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 17px 0 12px;
+  color: #68748a;
+  font-size: 11px;
+  letter-spacing: 1.1px;
+}
+.feed-label > span:last-child {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  letter-spacing: 0;
+  color: #596376;
+}
+.post {
+  padding: 20px 21px 0;
+  margin-bottom: 16px;
+}
+.post-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+.author {
+  flex: 1;
+  min-width: 0;
+}
+.author strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.author > span {
+  display: block;
+  font-size: 11px;
+  color: #5f6a7e;
+  line-height: 1.5;
+}
+.author .post-time {
+  font-size: 11px;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #68738a;
+}
+.follow-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--green);
+  font-size: 12px;
+  padding: 1px 0;
+  margin-top: 2px;
+}
+.follow-button.is-following {
+  color: #5a6477;
+}
+.post-heading > .icon-button {
+  padding: 0;
+  margin-left: 8px;
+}
+.post-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 14px 0 13px;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 4px;
+  background: #f5f3ee;
+  color: #8a8675;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 5px 7px;
+}
+.green-tag {
+  background: #eff1f5;
+  color: #4f5869;
+}
+.company-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #5e697d;
+  font-size: 11px;
+}
+.open-tag {
+  margin-left: auto;
+  color: #4f5869;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.open-tag:before,
+.status-dot {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #5a6477;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.post-copy {
+  white-space: normal;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #46587c;
+  letter-spacing: 0.01em;
+}
+.post-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  font-size: 11px;
+  color: #657086;
+  padding: 19px 0 12px;
+  align-items: center;
+}
+.post-stats > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tiny-heart {
+  display: grid;
+  place-items: center;
+  background: #ebeef3;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  color: #566072;
+}
+.post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #edeff4;
+}
+.post-actions > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 13px 5px;
+  color: #596376;
+  font-size: 11px;
+}
+.post-actions > button:last-child {
+  margin-left: 20px;
+}
+.post-actions > .active-action {
+  color: var(--green);
+}

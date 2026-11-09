@@ -1,0 +1,23 @@
+/* Follow button and options menu share one centre line and height. */
+.post-heading {
+  align-items: center;
+}
+.post-heading .follow-button,
+.post-heading .control-popover > .icon-button,
+.post-heading > .icon-button {
+  height: 32px;
+  margin: 0;
+  line-height: 1;
+}
+.post-heading .follow-button {
+  padding: 0 8px;
+  white-space: nowrap;
+}
+.post-heading .control-popover > .icon-button,
+.post-heading > .icon-button {
+  width: 32px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

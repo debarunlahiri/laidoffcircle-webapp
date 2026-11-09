@@ -1,0 +1,404 @@
+/* ---- My network: stats + member cards ---- */
+.network-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.network-stats > .network-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  transition:
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+.network-stats > .network-stat:hover {
+  box-shadow: 0 8px 22px rgba(19, 31, 53, 0.07);
+  transform: translateY(-1px);
+}
+.network-stats .network-stat .stat-text {
+  margin: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 6px;
+  min-width: 0;
+}
+.network-stat .stat-text small {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.network-stat .stat-text strong {
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+.network-stats .network-stat .stat-chip {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+}
+
+.people-grid {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+.people-grid > .pc {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  text-align: center;
+  transition:
+    box-shadow 0.18s ease,
+    transform 0.18s ease,
+    border-color 0.18s ease;
+}
+.people-grid > .pc:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(19, 31, 53, 0.1);
+  border-color: hsl(var(--hue) 45% 80%);
+}
+.pc-banner {
+  height: 72px;
+  background:
+    radial-gradient(
+      circle at 18% 120%,
+      hsl(calc(var(--hue) + 60) 80% 86% / 0.9),
+      transparent 55%
+    ),
+    linear-gradient(
+      120deg,
+      hsl(var(--hue) 65% 90%),
+      hsl(calc(var(--hue) + 35) 70% 82%)
+    );
+}
+.pc-avatar {
+  display: flex;
+  justify-content: center;
+  margin-top: -36px;
+}
+.pc-avatar .avatar {
+  width: 72px;
+  height: 72px;
+  font-size: 22px;
+  border: 4px solid var(--white);
+  box-shadow: 0 4px 12px rgba(19, 31, 53, 0.12);
+}
+.pc-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 18px 0;
+  flex: 1;
+}
+.pc-body h3 {
+  margin: 0;
+  max-width: 100%;
+  font-size: 17px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.pc-body h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.pc-body h3 a:hover {
+  color: var(--green);
+}
+.person-card .pc-role {
+  margin: 0;
+  max-width: 100%;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.pc-detail {
+  margin-top: 2px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--green) 10%, transparent);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 600;
+}
+.pc-actions {
+  display: flex;
+  gap: 8px;
+  padding: 14px 18px 18px;
+}
+
+.pc .pc-profile-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.pc .pc-actions {
+  position: relative;
+  z-index: 2;
+}
+
+.pc:has(.pc-profile-link:focus-visible) {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+.pc-actions .connect-btn {
+  height: 40px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.pc-message {
+  flex: 0 0 40px;
+  display: inline-grid;
+  place-items: center;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--green);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.pc-message:hover:not(:disabled) {
+  background: var(--mint);
+}
+.pc-message:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+@media all {
+  .network-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .network-stats > .network-stat {
+    padding: 14px 18px;
+  }
+}
+@media (max-width: 560px) {
+  .people-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---- Connection requests ---- */
+.card.rq {
+  padding: 18px 20px 20px;
+  margin-bottom: 28px;
+  border-radius: 18px;
+}
+.rq .rq-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+}
+.rq .rq-head h2 {
+  margin: 0;
+  font-size: 17px;
+}
+.rq .rq-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 12px;
+}
+.rq .rq-item {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  grid-template-areas: "avatar who" "actions actions";
+  align-items: center;
+  gap: 12px 14px;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--mint) 45%, var(--white));
+}
+.rq .rq-item > .user-link {
+  grid-area: avatar;
+}
+.rq .rq-item .avatar {
+  width: 52px;
+  height: 52px;
+  font-size: 16px;
+}
+.rq .rq-who {
+  grid-area: who;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.rq .rq-who strong {
+  font-size: 15px;
+  color: var(--ink);
+}
+.rq .rq-who small {
+  font-size: 13px;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rq .rq-actions {
+  grid-area: actions;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.rq .rq-accept,
+.rq .rq-decline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: auto;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.rq .rq-accept {
+  border: 1px solid #2f5ae0;
+  background: #2f5ae0;
+  color: #fff;
+}
+.rq .rq-accept:hover:not(:disabled) {
+  background: #2449bf;
+}
+.rq .rq-decline {
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--muted);
+}
+.rq .rq-decline:hover:not(:disabled) {
+  background: #fdecec;
+  border-color: #f4c7c9;
+  color: #c0383d;
+}
+.rq button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+@media (max-width: 520px) {
+  .rq .rq-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.pc-banner.has-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* Connection request: avatar, name, Accept and Decline on one line. */
+.rq .rq-list {
+  grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+}
+.rq .rq-item {
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  grid-template-areas: "avatar who actions";
+  padding: 12px 14px;
+}
+.rq .rq-item .avatar {
+  width: 48px;
+  height: 48px;
+}
+.rq .rq-actions {
+  display: flex;
+  gap: 8px;
+}
+.rq .rq-accept,
+.rq .rq-decline {
+  height: 36px;
+  padding: 0 14px;
+  white-space: nowrap;
+}
+@media (max-width: 520px) {
+  .rq .rq-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .rq .rq-item {
+    grid-template-columns: 44px minmax(0, 1fr);
+    grid-template-areas: "avatar who" "actions actions";
+  }
+  .rq .rq-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* The global `button:hover { color: var(--green) }` turned hovered Connect text
+   blue-on-blue; each state keeps its own text colour on hover. */
+.connect-btn.connect-primary:hover,
+.connect-btn.connect-primary:focus-visible {
+  color: #fff;
+}
+.connect-btn.connect-pending:hover {
+  color: #9a6208;
+}
+.connect-btn.connect-done:hover {
+  color: #11805a;
+}
+html[data-theme="dark"] .connect-btn.connect-pending:hover {
+  color: hsl(37 90% 72%);
+}
+html[data-theme="dark"] .connect-btn.connect-done:hover {
+  color: hsl(159 77% 72%);
+}
+.connect-btn:disabled,
+.connect-btn:disabled:hover {
+  opacity: 0.7;
+}
+
+/* Company picker: keep typed/placeholder text clear of the chevron / clear button. */
+.company-field .company-combobox > input[role="combobox"] {
+  padding-right: 48px;
+  text-overflow: ellipsis;
+}
+.company-field .company-combobox .company-chevron {
+  right: 16px;
+}
+.company-field .company-combobox .company-clear {
+  right: 10px;
+}
+
+/* Icon-only Connect / Requested / Accept (used in the "People to know" rail). */
+.connect-btn.icon-only {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 10px;
+}
+.suggestion .connect-btn.icon-only {
+  margin-left: auto;
+}

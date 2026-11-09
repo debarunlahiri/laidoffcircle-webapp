@@ -1,0 +1,16 @@
+export const pageHeadings: Record<string, string> = {
+  Profile: "Your profile",
+  "Member profile": "Meet your people.",
+  Search: "Find your people. Find your path.",
+  Home: "Your next chapter, together.",
+  "My network": "Good people. New possibilities.",
+  Referrals: "A connection can open a door.",
+  "Workforce insights": "A clearer view of the workforce.",
+  Messages: "Keep the conversation going.",
+  Bookmarks: "Keep what matters close.",
+  Explore: "Find your people. Find your path.",
+  Notifications: "Everything that needs your attention.",
+  More: "More",
+  Support: "Help & support",
+  Settings: "Settings",
+};

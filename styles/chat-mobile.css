@@ -1,0 +1,87 @@
+/* Keep the conversation within the visible viewport above the keyboard. */
+:root .messaging.chat-open {
+  border-radius: 0;
+  border: 0;
+}
+.message-inbox {
+  flex: 1;
+  overflow: hidden;
+}
+.inbox-new-chat {
+  align-self: flex-start;
+  margin: 0 16px 12px;
+}
+.chat-pending > .icon-button {
+  align-self: flex-start;
+  margin: calc(8px + var(--safe-t)) 8px 0;
+}
+.chat-error {
+  padding: 8px 16px;
+  color: var(--text-1);
+  background: var(--surface-2);
+}
+.chat-error .text-button {
+  margin-left: 8px;
+}
+.chat-composer,
+.chat-window .conversation-heading {
+  flex-shrink: 0;
+}
+.chat-composer .msg-attach-tray {
+  max-height: 120px;
+  overflow-y: auto;
+}
+.chat-start-spinner {
+  animation: chat-start-spin 1s linear infinite;
+}
+@keyframes chat-start-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-start-spinner {
+    animation: none;
+  }
+}
+@media (max-width: 719px) {
+  :root .messaging.chat-open {
+    top: var(--chat-top, 0px);
+    bottom: auto;
+    height: var(--chat-height, 100dvh);
+    max-width: none;
+  }
+  .chat-window .conversation-heading .user-link strong,
+  .chat-window .conversation-heading .user-link small {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+@media (min-width: 720px) {
+  :root .messaging,
+  :root .messaging.chat-open {
+    display: grid;
+    grid-template-columns: minmax(240px, 40%) minmax(0, 1fr);
+    height: calc(
+      100dvh - var(--topbar-h) - var(--safe-t) - var(--bottomnav-h) -
+        var(--safe-b) - 32px
+    );
+    min-height: 360px;
+    border: 1px solid var(--surface-3);
+    border-radius: var(--r-md);
+  }
+  .messaging.chat-open .message-inbox {
+    display: flex;
+  }
+  .messaging .chat-window {
+    display: flex;
+  }
+  .message-inbox {
+    border-right: 1px solid var(--surface-3);
+  }
+  .inbox-back {
+    display: none;
+  }
+}

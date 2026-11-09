@@ -1,0 +1,134 @@
+/* ---- Profile photo / cover editing ---- */
+.profile-cover {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+.cover-controls {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  display: flex;
+  gap: 8px;
+}
+.cover-controls .secondary {
+  width: auto;
+  padding: 8px 12px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.92);
+}
+.cover-controls .icon-button {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 8px;
+}
+.profile-avatar-wrap {
+  position: relative;
+}
+.avatar-edit {
+  position: absolute;
+  right: -2px;
+  bottom: 2px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: #2f5ae0;
+  color: #fff;
+  cursor: pointer;
+}
+.cropper-dialog {
+  max-width: 440px;
+}
+.cropper-frame {
+  position: relative;
+  margin: 14px auto;
+  overflow: hidden;
+  background: #111827;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  border-radius: 8px;
+}
+.cropper-frame:active {
+  cursor: grabbing;
+}
+.cropper-frame.round {
+  border-radius: 50%;
+}
+.cropper-frame img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  pointer-events: none;
+}
+.cropper-zoom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 20px 14px;
+}
+.cropper-zoom input {
+  flex: 1;
+}
+
+.theme-switch {
+  margin-left: auto;
+  width: 30px;
+  height: 18px;
+  border-radius: 999px;
+  background: #cbd2df;
+  position: relative;
+  transition: background-color 200ms ease;
+}
+.theme-switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px #0003;
+  transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.theme-switch.on {
+  background: #4c72ef;
+}
+.theme-switch.on::after {
+  transform: translateX(12px);
+}
+
+.new-dot {
+  margin-left: auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e5484d;
+}
+.release-notes {
+  display: grid;
+  gap: 22px;
+  margin-top: 18px;
+}
+.release-notes small {
+  font-size: 11px;
+  color: var(--muted);
+}
+.release-notes h3 {
+  margin: 4px 0 8px;
+  font-size: 15px;
+  font-family: var(--font-sans);
+}
+.release-notes ul {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #3d4a66;
+}

@@ -1,0 +1,58 @@
+/* Requests received */
+.request-row {
+  display: grid;
+  gap: 10px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.request-row-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.request-row-head small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.request-note {
+  margin: 0;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: #f6f8fc;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #3d4a66;
+  overflow-wrap: anywhere;
+}
+.request-answers {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+.request-answers dt {
+  font-size: 11px;
+  color: var(--muted);
+}
+.request-answers dd {
+  margin: 2px 0 0;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.request-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .two-fields {
+    grid-template-columns: 1fr;
+  }
+  .referral-trust {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

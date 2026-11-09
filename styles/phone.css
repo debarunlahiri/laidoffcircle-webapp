@@ -1,0 +1,111 @@
+/* Mobile app foundations: safe areas, touch targets, native-feeling scrolling. */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --tap: 44px;
+  --appbar-h: 56px;
+  --tabbar-h: 62px;
+  /* Widest a single column of content gets (large phones, unfolded foldables). */
+  --column: 720px;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Stops the page bouncing/pull-to-refresh while a sheet or chat is open. */
+  overscroll-behavior-y: none;
+}
+body {
+  min-height: 100dvh;
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
+  /* No grey flash or text selection when tapping controls. */
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+p,
+h1,
+h2,
+h3,
+.post-text,
+input,
+textarea {
+  -webkit-touch-callout: default;
+}
+/* 16px inputs: iOS zooms the page in on anything smaller. */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+/* Comfortable touch targets. */
+.icon-button,
+.text-button,
+.bottom-nav > button {
+  min-width: var(--tap);
+  min-height: var(--tap);
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: calc(var(--appbar-h) + var(--safe-top));
+  padding-top: var(--safe-top);
+}
+.app-shell {
+  display: block;
+}
+.workspace {
+  min-width: 0;
+  padding-bottom: calc(var(--tabbar-h) + var(--safe-bottom) + 8px);
+}
+main {
+  max-width: var(--column);
+  margin-inline: auto;
+}
+.page-layout {
+  display: block;
+  max-width: none;
+  padding-inline: 12px;
+}
+/* Dialogs become bottom sheets on a phone. */
+dialog,
+.dialog,
+.modal {
+  max-height: 92dvh;
+}
+.toast {
+  bottom: calc(var(--tabbar-h) + var(--safe-bottom) + 12px);
+}
+/* Horizontal strips scroll without a visible bar. */
+.discovery-tabs,
+.feed-tabs,
+.profile-tabs {
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+}
+.discovery-tabs::-webkit-scrollbar,
+.feed-tabs::-webkit-scrollbar,
+.profile-tabs::-webkit-scrollbar {
+  display: none;
+}
+@media (hover: none) {
+  button:hover,
+  a:hover {
+    filter: none;
+  }
+  button:active {
+    opacity: 0.85;
+  }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  :root {
+    --appbar-h: 48px;
+    --tabbar-h: 52px;
+  }
+  .bottom-nav > button span {
+    display: none;
+  }
+}

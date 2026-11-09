@@ -1,0 +1,94 @@
+:root .modal-backdrop.composer-sheet-backdrop {
+  align-items: flex-end;
+  padding: 0;
+}
+
+:root .modal.card.post-composer-dialog {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 680px;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  background: var(--surface-1);
+}
+
+:root .post-composer-dialog::before {
+  display: none;
+}
+
+:root .post-composer-dialog .modal-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  min-height: calc(60px + var(--safe-t));
+  margin: 0;
+  padding: var(--safe-t) 16px 0;
+  gap: 12px;
+  border-bottom: 1px solid var(--surface-3);
+}
+
+:root .post-composer-dialog .modal-heading h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.composer-sheet-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 16px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+:root .post-composer-dialog .composer-identity {
+  margin-bottom: 16px;
+}
+:root .post-composer-dialog .post-composer-fields {
+  gap: 16px;
+}
+:root .post-composer-dialog .md-editor:focus-within {
+  box-shadow: none;
+}
+
+:root .post-composer-dialog .md-textarea,
+:root .post-composer-dialog .md-preview {
+  min-height: 180px;
+  height: 28dvh;
+  resize: none;
+}
+
+:root .post-composer-dialog .modal-bottom {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  gap: 12px;
+  margin: 0;
+  padding: 12px 16px calc(12px + var(--safe-b));
+  border-top: 1px solid var(--surface-3);
+  background: var(--surface-1);
+}
+
+:root .post-composer-dialog .modal-bottom > span {
+  flex: 1;
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+:root .post-composer-dialog .modal-bottom > .primary {
+  flex: 0 0 auto;
+  min-height: 44px;
+  margin: 0 0 0 auto;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+}

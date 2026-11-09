@@ -1,0 +1,95 @@
+:root .post-detail-comments {
+  gap: 8px;
+  padding: 12px;
+  border-radius: 16px;
+}
+:root .post-detail-comments .comments-toolbar {
+  flex-wrap: nowrap;
+  min-width: 0;
+  gap: 8px;
+}
+:root .post-detail-comments .comments-toolbar h2 {
+  margin: 0;
+  color: var(--text-1);
+  font-size: 15px;
+  line-height: 1.3;
+}
+:root .post-detail-comments .comments-toolbar .icon-button {
+  width: 44px;
+  height: 44px;
+}
+:root .comment-form.comment-composer {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px 44px;
+  align-items: end;
+  gap: 2px;
+  min-width: 0;
+  margin: 0;
+  padding: 4px;
+  border: 1px solid var(--surface-3);
+  border-radius: 14px;
+  background: var(--surface-2);
+}
+:root .comment-composer > .comment-composer-text {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  max-height: 132px;
+  margin: 0;
+  padding: 11px 8px;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  color: var(--text-1);
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 22px;
+  resize: none;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+}
+:root .comment-composer > .comment-composer-text::placeholder {
+  color: var(--text-3);
+}
+:root .comment-composer > .icon-button {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+  color: var(--brand);
+}
+:root .comment-composer > button[type="submit"] {
+  background: var(--brand);
+  color: #fff;
+}
+:root .comment-composer > button[type="submit"]:disabled {
+  background: var(--surface-3);
+  color: var(--text-3);
+  opacity: 0.6;
+}
+:root .comment-composer > .comment-attachment {
+  grid-column: 1 / -1;
+  order: -1;
+  min-width: 0;
+  max-width: 100%;
+  margin: 4px;
+}
+:root .comment-composer .comment-attachment img {
+  max-width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+}
+:root .post-detail-comments > p {
+  margin: 0;
+  padding: 2px 0;
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.5;
+}
