@@ -21,33 +21,14 @@
   font-weight: 800;
   white-space: nowrap;
 }
-.brand > span:not(.brand-mark):not(.brand-dot) {
+.brand > span:not(.brand-dot) {
   color: var(--green);
 }
 .brand-mark {
-  position: relative;
-  width: 28px;
-  height: 29px;
-  display: inline-block;
+  width: 30px;
+  height: 30px;
+  flex: none;
   margin-right: 9px;
-}
-.brand-mark span {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--green);
-  border-radius: 50%;
-  top: 2px;
-  left: 0;
-}
-.brand-mark span:nth-child(2) {
-  left: 10px;
-  top: 2px;
-}
-.brand-mark span:nth-child(3) {
-  left: 5px;
-  top: 11px;
-  background: #fff;
 }
 .brand-dot {
   width: 4px;
@@ -386,14 +367,8 @@ h1 {
   font-size: 23px;
   letter-spacing: -0.9px;
 }
-.brand > span:not(.brand-mark):not(.brand-dot) {
+.brand > span:not(.brand-dot) {
   color: #a7baff;
-}
-.brand-mark span {
-  border-color: #9cb4ff;
-}
-.brand-mark span:nth-child(3) {
-  background: #131f35;
 }
 .brand-dot {
   background: #9cb4ff;

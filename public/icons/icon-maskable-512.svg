@@ -1,14 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#5588ff"/>
-      <stop offset="100%" stop-color="#2244cc"/>
-    </linearGradient>
-    <clipPath id="clip">
-      <rect x="0" y="0" width="512" height="512" rx="112.64" ry="112.64"/>
-    </clipPath>
-  </defs>
-  <rect width="512" height="512" rx="112.64" fill="url(#g)" clip-path="url(#clip)"/>
-  <circle cx="205.8" cy="205.8" r="150.5" stroke="#ffffff" stroke-width="28.2" fill="none" opacity="0.9"/>
-  <circle cx="306.2" cy="306.2" r="150.5" stroke="#ffffff" stroke-width="28.2" fill="none" opacity="0.9"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" fill="#3159df"/>
+  <g transform="translate(9.6 9.6) scale(0.7)"><g stroke="#fff" stroke-width="4.5">
+    <circle cx="24" cy="26" r="12"/>
+    <circle cx="40" cy="26" r="12"/>
+    <circle cx="32" cy="40" r="12" fill="#3159df"/>
+  </g></g>
 </svg>

@@ -229,7 +229,7 @@ html[data-theme="dark"] .topbar {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: var(--brand);
+  overflow: hidden;
   display: grid;
   place-items: center;
   flex-shrink: 0;

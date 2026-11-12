@@ -309,9 +309,13 @@ export default function Topbar() {
     >
       <Link href="/" className="topbar-brand" aria-label="LaidOffCircle home">
         <span className="topbar-brand-mark" aria-hidden="true">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <circle cx="5" cy="5" r="4" stroke="white" strokeWidth="2" />
-            <circle cx="9" cy="9" r="4" stroke="white" strokeWidth="2" />
+          <svg width="28" height="28" viewBox="0 0 64 64" fill="none">
+            <rect width="64" height="64" rx="15" fill="#3159df" />
+            <g stroke="#fff" strokeWidth="4.5">
+              <circle cx="24" cy="26" r="12" />
+              <circle cx="40" cy="26" r="12" />
+              <circle cx="32" cy="40" r="12" fill="#3159df" />
+            </g>
           </svg>
         </span>
         <span>
