@@ -14,6 +14,7 @@ export default function AuthGuard({ children }: { children: ReactNode }) {
     ) ||
     (pathname.startsWith("/referrals/") && pathname !== "/referrals/new") ||
     pathname.startsWith("/users/") ||
+    pathname.startsWith("/posts/") ||
     pathname.startsWith("/search");
   useEffect(() => {
     if (!publicPage && !loading && !user && !sessionError)

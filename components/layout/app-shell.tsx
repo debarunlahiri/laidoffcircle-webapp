@@ -28,6 +28,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
   const showRightRail = section === "Home" && pathname === "/";
   const readingPage =
     pathname === "/explore" ||
+    pathname === "/bookmarks" ||
     pathname.startsWith("/search") ||
     pathname.startsWith("/posts/") ||
     (pathname.startsWith("/referrals/") && pathname !== "/referrals/new");

@@ -36,7 +36,7 @@ async function proxyBackendInner(
   const publicRead =
     request.method === "GET" &&
     (media ||
-      /^(daily-reminder|search|posts(?:\/topics|\/topic-options|\/[a-zA-Z0-9-]+\/comments)?|referrals|companies(?:\/[a-zA-Z0-9-]+)?|users(?:\/[a-zA-Z0-9_-]+(?:\/stats)?)?|insights(?:\/[-a-zA-Z0-9_]+)*)$/.test(
+      /^(daily-reminder|search|posts(?:\/topics|\/topic-options|\/[0-9a-f-]{36}|\/[a-zA-Z0-9-]+\/comments)?|referrals|companies(?:\/[a-zA-Z0-9-]+)?|users(?:\/[a-zA-Z0-9_-]+(?:\/stats)?)?|insights(?:\/[-a-zA-Z0-9_]+)*)$/.test(
         segments.join("/"),
       ));
   if (!token && !publicRead) return errorResponse("Please sign in", 401);

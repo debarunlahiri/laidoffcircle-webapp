@@ -2,7 +2,7 @@
 import { usePlatform } from "@/providers/platform-provider";
 import { useAuth, userInitials } from "@/providers/auth-provider";
 import { Compass, House, Users, Menu, Plus } from "lucide-react";
-import Image from "next/image";
+import { mediaUrl } from "@/lib/api";
 
 type TabDef = {
   label: string;
@@ -47,11 +47,15 @@ function NavTab({
         {label === "More" && avatar ? (
           <span className="nav-avatar" aria-hidden="true">
             {avatar.src ? (
-              <Image
-                src={avatar.src}
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={
+                  avatar.src.startsWith("/uploads/")
+                    ? mediaUrl(avatar.src)
+                    : avatar.src
+                }
                 alt=""
-                width={26}
-                height={26}
+                referrerPolicy="no-referrer"
                 style={{
                   width: "100%",
                   height: "100%",

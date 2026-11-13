@@ -160,7 +160,7 @@ export function Lightbox({
               ? gestures.dragging
                 ? "grabbing"
                 : "grab"
-              : "zoom-in",
+              : "pointer",
         }}
         src={images[index]}
         alt={`Photo ${index + 1} of ${images.length} shared by ${author}`}

@@ -745,3 +745,10 @@ html[data-theme="dark"] .pf-activity-arrow {
   border-color: rgb(255 255 255 / 0.14);
   color: #e8eefc;
 }
+
+/* Posts on a profile read in the same column as the home feed and post pages. */
+.pf-activity-panel {
+  width: 100%;
+  max-width: 860px;
+  margin-inline: auto;
+}
