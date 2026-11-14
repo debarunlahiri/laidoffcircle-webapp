@@ -172,6 +172,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         : result.user,
     );
     setSessionError("");
+    // The sign-in answer is a short profile. Pull the full one (badge and the
+    // rest) right away, quietly, so nothing is missing until the next reload.
+    const generation = epoch.current;
+    try {
+      const full = await authRequest("session");
+      if (generation === epoch.current)
+        setUser(action === "google" ? { ...full, googleLinked: true } : full);
+    } catch {
+      // Keep the sign-in answer; a later refresh will fill in the rest.
+    }
   }
   return (
     <Context.Provider
