@@ -38,7 +38,11 @@ export default function EngagementDialog({
   const tab = tabs.find((item) => item.type === type)!;
 
   return (
-    <Dialog label="People who engaged with this post" onClose={onClose}>
+    <Dialog
+      label="People who engaged with this post"
+      onClose={onClose}
+      closeOnOutsideClick
+    >
       <div className="modal-heading">
         <h2>Post activity</h2>
         <button className="icon-button" aria-label="Close" onClick={onClose}>

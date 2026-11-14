@@ -85,8 +85,8 @@ export default function RichText({
         (element.tagName !== "img" || isFavicon(element.properties.src)) &&
         (!clamped ||
           element.tagName !== "a" ||
-          (element.properties.className?.includes("post-hashtag") === true ||
-            element.properties.className?.includes("post-mention") === true))
+          element.properties.className?.includes("post-hashtag") === true ||
+          element.properties.className?.includes("post-mention") === true)
       }
       urlTransform={(url, key, node) =>
         key === "src" && node.tagName === "img"
@@ -96,9 +96,11 @@ export default function RichText({
           : defaultUrlTransform(url)
       }
       components={{
-        img: ({ src }) => (typeof src === "string" ? <Favicon src={src} /> : null),
+        img: ({ src }) =>
+          typeof src === "string" ? <Favicon src={src} /> : null,
         a: ({ href, className, children, title }) =>
-          href && (className === "post-hashtag" || className === "post-mention") ? (
+          href &&
+          (className === "post-hashtag" || className === "post-mention") ? (
             <Link
               className={className}
               href={href}

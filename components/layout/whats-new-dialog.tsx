@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 
 export default function WhatsNewDialog({ onClose }: { onClose: () => void }) {
   return (
-    <Dialog label="What's new" onClose={onClose}>
+    <Dialog label="What's new" onClose={onClose} closeOnOutsideClick>
       <div className="modal-heading">
         <h2>What’s new</h2>
         <button className="icon-button" aria-label="Close" onClick={onClose}>

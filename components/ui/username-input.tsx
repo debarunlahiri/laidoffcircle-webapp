@@ -95,7 +95,8 @@ export default function UsernameInput({
         {status === "checking" && "Checking…"}
         {status === "available" && `@${normalized} is available`}
         {status === "unavailable" && reason}
-        {status === "idle" && "Letters, numbers and underscores. 3–30 characters."}
+        {status === "idle" &&
+          "Letters, numbers and underscores. 3–30 characters."}
       </small>
     </label>
   );

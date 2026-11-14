@@ -7,8 +7,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   ArrowRight,
-  Eye,
-  EyeOff,
   LoaderCircle,
   TriangleAlert,
   Users,
@@ -20,6 +18,7 @@ import { googleSignInAvailable } from "@/lib/firebase";
 import { sectionPaths } from "@/config/navigation";
 import GoogleIcon from "./google-icon";
 import PasswordStrength from "./password-strength";
+import PasswordField from "@/components/ui/password-field";
 import { checkPassword } from "@/lib/password-strength";
 
 function readableError(error: unknown) {
@@ -220,38 +219,17 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
                   placeholder="you@example.com"
                 />
               </label>
-              <label htmlFor="auth-password">
-                Password
-                <div className="auth-password">
-                  <input
-                    id="auth-password"
-                    type={showPassword ? "text" : "password"}
-                    autoComplete={
-                      registering ? "new-password" : "current-password"
-                    }
-                    required
-                    minLength={12}
-                    maxLength={128}
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
-                    placeholder={
-                      registering
-                        ? "At least 12 characters"
-                        : "Enter your password"
-                    }
-                  />
-                  <button
-                    type="button"
-                    aria-label={
-                      showPassword ? "Hide password" : "Show password"
-                    }
-                    aria-pressed={showPassword}
-                    onClick={() => setShowPassword(!showPassword)}
-                  >
-                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                  </button>
-                </div>
-              </label>
+              <PasswordField
+                label="Password"
+                value={password}
+                onChange={setPassword}
+                autoComplete={registering ? "new-password" : "current-password"}
+                placeholder={
+                  registering ? "At least 12 characters" : "Enter your password"
+                }
+                visible={showPassword}
+                onToggle={() => setShowPassword(!showPassword)}
+              />
               {registering && (
                 <PasswordStrength
                   password={password}
@@ -260,20 +238,15 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
                 />
               )}
               {registering && (
-                <label htmlFor="confirm-password">
-                  Confirm password
-                  <input
-                    id="confirm-password"
-                    type={showPassword ? "text" : "password"}
-                    autoComplete="new-password"
-                    required
-                    minLength={12}
-                    maxLength={128}
-                    value={confirm}
-                    onChange={(event) => setConfirm(event.target.value)}
-                    placeholder="Enter your password again"
-                  />
-                </label>
+                <PasswordField
+                  label="Confirm password"
+                  value={confirm}
+                  onChange={setConfirm}
+                  autoComplete="new-password"
+                  placeholder="Enter your password again"
+                  visible={showPassword}
+                  showToggle={false}
+                />
               )}
               {error && (
                 <p className="auth-error" role="alert">

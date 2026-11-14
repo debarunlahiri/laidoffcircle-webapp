@@ -70,7 +70,7 @@ export default function Popover({
         {icon}
       </button>
       {open && presentation === "sheet" && (
-        <BottomSheet title={label} onClose={close}>
+        <BottomSheet title={label} onClose={close} closeOnOutsideClick>
           <div className="bottom-sheet-menu">{children(close)}</div>
         </BottomSheet>
       )}

@@ -1,6 +1,7 @@
 "use client";
 
 import { SettingsGroup, SettingsRow } from "@/components/settings/settings-row";
+import ChangePasswordSheet from "@/components/settings/change-password-sheet";
 import UsernameInput from "@/components/ui/username-input";
 import { googleSignInAvailable } from "@/lib/firebase";
 import { apiMessage } from "@/lib/api";
@@ -24,6 +25,7 @@ export default function AccountSettings() {
   const [valid, setValid] = useState(true);
   const [saving, setSaving] = useState(false);
   const [linking, setLinking] = useState(false);
+  const [changingPassword, setChangingPassword] = useState(false);
   const normalized = username.trim().replace(/^@/, "").toLowerCase();
   if (!user) return null;
 
@@ -108,6 +110,18 @@ export default function AccountSettings() {
             <ChevronRight size={14} aria-hidden="true" />
           </Link>
         </SettingsRow>
+        <SettingsRow
+          label="Password"
+          hint="Changing it signs you out on your other devices."
+        >
+          <button
+            type="button"
+            className="settings-button"
+            onClick={() => setChangingPassword(true)}
+          >
+            <KeyRound size={15} aria-hidden="true" /> Change password
+          </button>
+        </SettingsRow>
         {googleSignInAvailable && (
           <SettingsRow
             label="Google sign-in"
@@ -147,6 +161,9 @@ export default function AccountSettings() {
           </SettingsRow>
         )}
       </SettingsGroup>
+      {changingPassword && (
+        <ChangePasswordSheet onClose={() => setChangingPassword(false)} />
+      )}
     </div>
   );
 }

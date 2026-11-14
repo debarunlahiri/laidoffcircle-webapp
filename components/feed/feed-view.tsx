@@ -67,7 +67,11 @@ export default function FeedView() {
         </div>
       </div>
       {filtersOpen && (
-        <BottomSheet title="Feed filters" onClose={() => setFiltersOpen(false)}>
+        <BottomSheet
+          title="Feed filters"
+          onClose={() => setFiltersOpen(false)}
+          closeOnOutsideClick
+        >
           <div className="feed-filter-fields">
             <label>
               Topic

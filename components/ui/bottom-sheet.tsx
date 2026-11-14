@@ -8,16 +8,19 @@ import { createPortal } from "react-dom";
 export default function BottomSheet({
   title,
   onClose,
+  closeOnOutsideClick = false,
   children,
 }: {
   title: string;
   onClose: () => void;
+  closeOnOutsideClick?: boolean;
   children: ReactNode;
 }) {
   return createPortal(
     <Dialog
       label={title}
       onClose={onClose}
+      closeOnOutsideClick={closeOnOutsideClick}
       className="bottom-sheet"
       backdropClassName="bottom-sheet-backdrop"
     >
