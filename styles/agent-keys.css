@@ -1,0 +1,135 @@
+/* Admin: agent API keys (mobile first) */
+.agent-keys {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4px 0 24px;
+  color: var(--ink);
+}
+.agent-keys-head {
+  display: grid;
+  gap: 12px;
+}
+.agent-keys-head h1 {
+  margin: 0;
+  font-size: 22px;
+}
+.agent-keys-head p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.agent-keys-head > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 46px;
+  width: 100%;
+}
+.agent-keys-loading {
+  display: grid;
+  place-items: center;
+  padding: 40px 0;
+}
+.agent-key-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.agent-key {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+.agent-key.is-revoked {
+  opacity: 0.65;
+}
+.agent-key-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.agent-key-top strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 16px;
+}
+.agent-key-status {
+  flex: none;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.agent-key-status.on {
+  background: #dff5e7;
+  color: #17753f;
+}
+.agent-key-status.off {
+  background: #f3e1e1;
+  color: #9f3030;
+}
+.agent-key dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+.agent-key dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+.agent-key dt {
+  color: var(--muted);
+  flex: none;
+}
+.agent-key dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+.agent-key-revoke {
+  width: 100%;
+  min-height: 44px;
+}
+.agent-key-empty {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--muted);
+}
+.agent-key-secret {
+  display: block;
+  margin: 14px 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  overflow-wrap: anywhere;
+  user-select: all;
+  font-size: 13px;
+}
+@media (min-width: 640px) {
+  .agent-keys-head {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+  .agent-keys-head > button {
+    width: auto;
+    padding: 0 18px;
+  }
+  .agent-key-revoke {
+    width: auto;
+    justify-self: start;
+  }
+}

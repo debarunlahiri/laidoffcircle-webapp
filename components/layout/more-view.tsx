@@ -16,6 +16,7 @@ import {
   BriefcaseBusiness,
   ChevronRight,
   CircleHelp,
+  KeyRound,
   Link as LinkIcon,
   LogIn,
   LogOut,
@@ -162,6 +163,13 @@ export default function MoreView() {
           <span>Settings</span>
           <ChevronRight size={18} aria-hidden="true" />
         </Link>
+        {user?.isAdmin && (
+          <Link href="/admin/agent-keys">
+            <KeyRound size={20} />
+            <span>Agent API keys</span>
+            <ChevronRight size={18} aria-hidden="true" />
+          </Link>
+        )}
         <button type="button" onClick={openReleaseNotes}>
           <Sparkles size={20} />
           <span>What’s new</span>
