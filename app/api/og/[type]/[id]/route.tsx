@@ -23,6 +23,10 @@ function logoSrc() {
 const siteCard: ShareCard = {
   kind: "post",
   id: "home",
+  path: "/",
+  indexable: false,
+  body: "",
+  facts: [],
   title: siteName,
   description: "",
   eyebrow: "Community",

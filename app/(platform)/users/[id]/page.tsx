@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ShareSeo from "@/components/seo/share-seo";
 import { shareMetadataFor } from "@/lib/share-metadata";
 import MemberProfileView from "@/components/profile/member-profile-view";
 
@@ -15,5 +16,11 @@ export default async function MemberProfilePage({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  return <MemberProfileView id={(await params).id} />;
+  const id = (await params).id;
+  return (
+    <>
+      <ShareSeo kind="profile" id={id} />
+      <MemberProfileView id={id} />
+    </>
+  );
 }

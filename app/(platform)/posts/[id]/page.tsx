@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ShareSeo from "@/components/seo/share-seo";
 import { shareMetadataFor } from "@/lib/share-metadata";
 import PostDetailView from "@/components/feed/post-detail-view";
 
@@ -16,5 +17,10 @@ export default async function PostPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  return <PostDetailView id={id} />;
+  return (
+    <>
+      <ShareSeo kind="post" id={id} />
+      <PostDetailView id={id} />
+    </>
+  );
 }

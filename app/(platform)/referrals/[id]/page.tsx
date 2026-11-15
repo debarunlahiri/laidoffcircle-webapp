@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ShareSeo from "@/components/seo/share-seo";
 import { shareMetadataFor } from "@/lib/share-metadata";
 import ReferralDetailView from "@/components/referrals/referral-detail-view";
 
@@ -16,5 +17,10 @@ export default async function ReferralPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  return <ReferralDetailView id={id} />;
+  return (
+    <>
+      <ShareSeo kind="referral" id={id} />
+      <ReferralDetailView id={id} />
+    </>
+  );
 }
