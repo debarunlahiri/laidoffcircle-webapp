@@ -26,17 +26,29 @@ export function notificationMeta(item: ApiNotification): Meta {
     case "message":
       return { label: "Message", icon: MessageCircle, href: "/messages" };
     case "connection":
-      return { label: "Connection request", icon: UserPlus, href: "/network" };
+      return {
+        label: "Connection request",
+        icon: UserPlus,
+        href: item.actorId ? `/users/${item.actorId}` : "/network",
+      };
     case "connection_accepted":
       return {
         label: "Connection accepted",
         icon: UserCheck,
-        href: "/network",
+        href: item.actorId ? `/users/${item.actorId}` : "/network",
       };
     case "like":
-      return { label: "Like", icon: ThumbsUp, href: "/" };
+      return {
+        label: "Like",
+        icon: ThumbsUp,
+        href: item.resourceId ? `/posts/${item.resourceId}` : "/",
+      };
     case "comment":
-      return { label: "Comment", icon: MessageSquare, href: "/" };
+      return {
+        label: "Comment",
+        icon: MessageSquare,
+        href: item.resourceId ? `/posts/${item.resourceId}` : "/",
+      };
     case "repost":
       return {
         label: "Quote",
