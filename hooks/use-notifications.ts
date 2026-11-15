@@ -11,11 +11,11 @@ export function useNotifications(
   const summary = useApiResource<{ unread: number; unreadMessages: number }>(
     user ? "/notifications/summary" : null,
     { unread: 0, unreadMessages: 0 },
-    live ? 0 : 20000, // poll only while the live connection is down
+    live ? 0 : 90000, // poll only while the live connection is down
   );
   const list = useApiList<ApiNotification>(
     user ? "/notifications" : null,
-    live ? 0 : 20000,
+    live ? 0 : 90000,
   );
   async function markNotificationRead(id?: string) {
     try {

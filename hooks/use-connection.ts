@@ -38,7 +38,7 @@ export function useConnection() {
     window.addEventListener("offline", run);
     const timer = setInterval(() => {
       if (document.visibilityState === "visible") run();
-    }, 15000);
+    }, 60000);
     return () => {
       window.removeEventListener("online", run);
       window.removeEventListener("offline", run);

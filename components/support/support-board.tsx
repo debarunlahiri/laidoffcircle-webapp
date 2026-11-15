@@ -30,7 +30,7 @@ export default function SupportBoard({ admin = false }: { admin?: boolean }) {
   const tickets = useApiResource<{ items: SupportTicket[]; total: number }>(
     queryPath(base, { status, offset, limit: PAGE_SIZE }),
     { items: [], total: 0 },
-    30000,
+    120000,
   );
   return (
     <div className={`support-page${admin ? "" : " support-home"}`}>

@@ -22,7 +22,7 @@ export function useMessages(
 ) {
   const list = useApiList<ApiConversation>(
     userId && section === "Messages" ? "/conversations" : null,
-    live ? 0 : 15000, // poll only while the live connection is down
+    live ? 0 : 60000, // poll only while the live connection is down
   );
   const [selected, setSelected] = useState<string | null>(null);
   const [requestedChatId, setRequestedChatId] = useState<string | null>(null);

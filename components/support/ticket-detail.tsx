@@ -33,10 +33,10 @@ export default function TicketDetail({
 }) {
   const base = admin ? "/admin/support" : "/support";
   const path = `${base}/${encodeURIComponent(id)}`;
-  const resource = useApiResource<SupportTicket | null>(path, null, 30000);
+  const resource = useApiResource<SupportTicket | null>(path, null, 120000);
   const messages = useApiList<SupportMessage>(
     resource.data ? `${path}/messages` : null,
-    15000,
+    60000,
   );
   const [images, setImages] = useState<File[]>([]);
   const [reply, setReply] = useState("");

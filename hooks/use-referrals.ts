@@ -39,7 +39,7 @@ export function useReferrals(
   const debouncedSearch = useDebouncedValue(search);
   const list = useApiList<ApiReferral>(
     queryPath("/referrals", { search: debouncedSearch, status: "all" }),
-    60000,
+    180000,
   );
   const requests = useApiList<ApiReferralRequest>(
     requestReferralId ? `/referrals/${requestReferralId}/requests` : null,

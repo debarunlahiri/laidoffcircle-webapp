@@ -63,7 +63,7 @@ export default function MessagingDock() {
   const [minimized, setMinimized] = useState<string[]>([]);
   const list = useApiList<ApiConversation>(
     currentUser ? "/conversations" : null,
-    20000,
+    90000,
   );
 
   useEffect(() => {
@@ -344,7 +344,7 @@ function ChatWindow({
 }) {
   const history = useApiList<ApiMessage>(
     `/conversations/${row.id}/messages`,
-    10000,
+    60000,
   );
   const [cache, setCache] = useState<ApiMessage[]>([]);
   const [draft, setDraft] = useState("");

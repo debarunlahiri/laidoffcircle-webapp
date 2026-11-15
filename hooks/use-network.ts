@@ -19,10 +19,10 @@ export function useNetwork(notify: (message: string) => void, userId: string) {
     outgoingRequests: 0,
     incomingRequests: 0,
   });
-  const users = useApiList<ApiPerson>("/users", 60000);
+  const users = useApiList<ApiPerson>("/users", 180000);
   const links = useApiList<ApiConnection>(
     userId ? "/connections" : null,
-    30000,
+    120000,
   );
   const [pending, setPending] = useState<string[]>([]);
   const following = users.data
