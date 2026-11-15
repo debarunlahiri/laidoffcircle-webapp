@@ -39,7 +39,13 @@ const trainingCrawlers = [
 export default function robots(): MetadataRoute.Robots {
   const origin = canonicalOrigin();
   const rules: MetadataRoute.Robots["rules"] = [
-    { userAgent: "*", allow: "/", disallow: privatePaths },
+    {
+      userAgent: "*",
+      // Link-preview crawlers (X, LinkedIn, Facebook, Slack...) obey robots.txt
+      // and must be able to fetch the share images that live under /api/.
+      allow: ["/", "/api/og/", "/api/media/"],
+      disallow: privatePaths,
+    },
   ];
   if (process.env.AI_CRAWLERS === "block")
     rules.push({ userAgent: trainingCrawlers, disallow: "/" });
