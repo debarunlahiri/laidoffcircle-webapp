@@ -1,5 +1,6 @@
 import ThemeScript from "@/components/ui/theme-script";
 import SwRegister from "@/components/ui/sw-register";
+import { Analytics } from "@vercel/analytics/next";
 import NavigationHistory from "@/components/layout/navigation-history";
 import { AuthProvider } from "@/providers/auth-provider";
 import type { Metadata, Viewport } from "next";
@@ -90,6 +91,7 @@ export default function RootLayout({
         <NavigationHistory />
         <AuthProvider>{children}</AuthProvider>
         <SwRegister />
+        <Analytics />
       </body>
     </html>
   );
