@@ -3,9 +3,11 @@ import SwRegister from "@/components/ui/sw-register";
 import NavigationHistory from "@/components/layout/navigation-history";
 import { AuthProvider } from "@/providers/auth-provider";
 import type { Metadata, Viewport } from "next";
+import { siteImage, siteOrigin } from "@/lib/share-metadata";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteOrigin()),
   title: "LaidOffCircle — Laid off, not disconnected.",
   applicationName: "LaidOffCircle",
   description:
@@ -31,14 +33,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "LaidOffCircle",
+    locale: "en_US",
     title: "LaidOffCircle — Laid off, not disconnected.",
     description:
       "A place to find your people, share your story, and build your next chapter.",
+    images: [
+      { url: siteImage(), width: 1200, height: 630, alt: "LaidOffCircle" },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "LaidOffCircle",
-    description: "Laid off, not disconnected.",
+    card: "summary_large_image",
+    title: "LaidOffCircle — Laid off, not disconnected.",
+    description:
+      "A place to find your people, share your story, and build your next chapter.",
+    images: [siteImage()],
   },
   icons: {
     icon: [
